@@ -1,21 +1,36 @@
-# ExifScrubberSpoofer
-A privacy-focused Android app to remove or spoof EXIF metadata from images locally. 100% OLED black design.
-# Exif Scrubber & Spoofer 🛡️📸
+ExifScrubberSpoofer v1.0.0 (Stable) 🛡️📸
+Eine datenschutzorientierte Android-App zum lokalen Entfernen oder Fälschen von EXIF-Metadaten aus Bildern – frisch auf die stabile Version 1.0.0 gehoben und mit starken neuen Werkzeugen erweitert!
 
-**Eine moderne Android-App für absolute Privatsphäre und Datensicherheit.**
+Mit dieser App lassen sich versteckte Metadaten (EXIF) aus Fotos restlos entfernen oder durch gefälschte Daten ersetzen (Spoofing).
 
-Mit dieser App kannst du versteckte Metadaten (EXIF) aus deinen Fotos entfernen oder durch gefälschte Daten ersetzen (Spoofing).
+✨ Die wichtigsten Neuerungen in der Stable-Version
+📂 Stapelverarbeitung (Batch-Modus): Mehrere Fotos gleichzeitig auswählen und in einem einzigen Durchgang bereinigen.
 
-## ✨ Features
-- **OLED Black Design:** Optimiert für Akkulaufzeit und edle Optik.
-- **Privacy First:** 100% LOKALE Verarbeitung. Kein Foto verlässt jemals dein Gerät.
-- **Exif Scrubbing:** Löscht GPS-Koordinaten, Kamerainfos (Marke/Modell) und Zeitstempel.
-- **Exif Spoofing:** Ersetze echte Daten durch eigene Angaben (z.B. eine Leica-Kamera vortäuschen).
-- **Vorschau-Modus:** Siehe sofort, welche Metadaten in einem Bild versteckt sind.
-- **Share Integration:** Bereinige Bilder direkt über das "Teilen"-Menü deiner Galerie.
+📄 Bild ⇄ PDF Werkzeuge: Integrierte Konverter-Tools, um Bilder unkompliziert in PDFs umzuwandeln oder PDF-Seiten als Bilder zu extrahieren.
 
-## 🛠️ Installation
-Lade dir die neueste APK aus dem `debug` Ordner herunter oder kompiliere den Quellcode selbst in Android Studio.
+🛡️ Datenschutz, Rechtliches & DSGVO (Pflicht & saubere Umsetzung):
+Weil der Jugendschutz- und Datenschutzrahmen in der EU streng ist, wurde hier ein vollkommen transparentes und rechtssicheres Fundament geschaffen:
 
-## 📜 Lizenz
-Dieses Projekt ist Open Source. Der Code kann von jedem eingesehen und überprüft werden.
+100 % Lokale Verarbeitung: Alle Fotos und Metadaten bleiben zu jeder Zeit auf dem Gerät.
+
+DSGVO-Einwilligungsdialog: Ein sauberer Zustimmungs-Dialog beim ersten Start.
+
+Datenschutzerklärung & Impressum: Direkt in der App integriert (inkl. Hinweisen zu eventueller Google AdMob-Werbung im Code).
+
+Datenschutz-Prüfbericht: Ein exportierbarer Audit-Report für maximale Transparenz.
+
+🎨 Erweiterte Design-Optionen (OLED & LCD): Neben dem beliebten OLED-Schwarz-Design für maximale Akkuschonung gibt es nun ein eigenes Design-Untermenü mit flexiblen Einstellungsoptionen (Systemstandard, Hell, Dunkel Standard) – perfekt angepasst an jedes Display.
+
+📸 Erweiterte Kamera-Presets & Spoofing: Voreingestellte Schnell-Presets für bekannte Kameramodelle (Leica M11, Hasselblad, Analoge Kamera) sowie präzises GPS- und Datums-Spoofing.
+
+🗑️ Original-Löschung & Komprimierung: Option zum sicheren Löschen des Originalfotos nach erfolgreicher Bereinigung (inklusive moderner Android-Sicherheitsabfragen) sowie optionales Komprimieren auf 85 % JPEG-Qualität, um Speicherplatz zu sparen.
+
+🌍 Mehrsprachigkeit: Vollständig lokalisiert in Deutsch, Englisch, Spanisch und Französisch.
+
+🛠️ Installation & Nutzung
+Lade die neueste APK-Datei herunter.
+
+Datenschutz an erster Stelle: 100 % LOKALE Verarbeitung. Kein Foto verlässt jemals das Gerät.
+
+📜 Lizenz & Open Source
+Dieses Projekt ist Open Source. Der Quellcode ist öffentlich und kann von jedem eingesehen und überprüft werden.
