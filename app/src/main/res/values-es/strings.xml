@@ -50,7 +50,7 @@
     <string name="btn_accept">Aceptar y continuar</string>
     <string name="btn_read_privacy_policy">Política de privacidad</string>
     <string name="privacy_policy_message"><b>1. Procesamiento local de datos (Fotos y EXIF)</b><br/>Todas las fotos y metadatos (GPS, info de cámara, fecha) se procesan <b>exclusivamente de forma local en tu dispositivo</b>. Ninguna imagen o metadato se sube a servidores externos.<br/><br/><b>2. Publicidad y Google AdMob</b><br/>Si se integra publicidad en futuras versiones, yo como desarrollador <b>no</b> poseo ni gestiono dichos datos publicitarios. La recogida y gestión de anuncios es realizada exclusivamente por <b>Google (Google AdMob)</b>. Más información en https://policies.google.com/technologies/ads.<br/><br/><b>3. Tus derechos</b><br/>Tienes derecho a acceder, rectificar o eliminar tus datos en cualquier momento.<br/><br/><b>4. Contacto</b><br/>Para consultas sobre privacidad, consulta la sección de Aviso Legal.</string>
-    <string name="imprint_message"><b>Exif Scrubber &amp; Spoofer</b><br/><br/><b>Desarrollador y contacto:</b><br/>ADR20770 Apps (Desarrollador independiente)<br/>Correo electrónico: support@adr20770.com<br/><br/><b>Exención de responsabilidad:</b><br/>Esta aplicación procesa archivos de forma estrictamente local. No se asume ninguna responsabilidad por pérdida de datos.<br/><br/>© 2025 ADR20770. Todos los derechos reservados.</string>
+    <string name="imprint_message"><b>Exif Scrubber &amp; Spoofer</b><br/><br/><b>Desarrollador y contacto:</b><br/>ADR20770 Apps (Desarrollador independiente)<br/>Contacto: El contacto a través de mi dirección de correo electrónico no funciona actualmente. Estaba integrado previamente en la app, pero fui demasiado impaciente. Trabajaré en abrir el canal de contacto para que podáis enviarme errores o preguntas directamente.<br/><br/><b>Exención de responsabilidad:</b><br/>Esta aplicación procesa archivos de forma estrictamente local. No se asume ninguna responsabilidad por pérdida de datos.<br/><br/>© 2025 ADR20770. Todos los derechos reservados.</string>
     <string name="gdpr_dialog_message">¡Valoro tu privacidad!<br/><br/>• <b>100% Procesamiento local:</b> Tus fotos y metadatos nunca salen de tu dispositivo.<br/>• <b>Sin publicidad ni seguimiento:</b> Actualmente no se muestran anuncios en esta aplicación y no se envían datos a redes publicitarias.<br/><br/>Por favor, acepta los términos de privacidad para continuar.</string>
     <string name="menu_theme">Tema de la app</string>
     <string name="theme_dialog_title">Elegir tema</string>
@@ -80,4 +80,26 @@
     <string name="hint_spoof_date">Fecha falsa (ej. 2025:01:01 12:00:00)</string>
     <string name="check_delete_original">Eliminar foto original de forma segura</string>
     <string name="auto_scrub_toast">¡Imagen compartida limpiada automáticamente!</string>
+    <string name="toast_invalid_date">¡Formato de fecha no válido! Use AAAA:MM:DD HH:MM:SS o AAAA-MM-DD</string>
+    <string name="report_title">Informe de auditoría de privacidad EXIF</string>
+    <string name="toast_delete_cancelled">Cancelada la eliminación de la foto original</string>
+    <string name="toast_delete_success">¡Foto original eliminada!</string>
+    <string name="tab_single">Individual</string>
+    <string name="tab_batch">Lote</string>
+    <string name="tab_tools">Herramientas</string>
+    <string name="batch_progress_format">Imagen %1$d de %2$d</string>
+    <string name="batch_result_format">%1$d de %2$d limpiadas con éxito</string>
+    <string name="pdf_save_success">¡PDF guardado en Documents/ExifScrubber!</string>
+    <string name="pdf_save_error">Error al convertir imagen a PDF</string>
+    <string name="pdf_extract_success">¡%d páginas extraídas en Pictures/ExifScrubber!</string>
+    <string name="map_picker_title">Seleccionar ubicación en el mapa</string>
+    <string name="map_picker_confirm">Confirmar ubicación</string>
+    <string name="btn_pick_location">Seleccionar en mapa</string>
+    <string name="btn_random_offset">Desplazamiento aleatorio</string>
+    <string name="btn_random_date">Fecha aleatoria</string>
+    <string name="btn_shift_date">Desplazar N días</string>
+    <string name="btn_export_pdf_report">Guardar informe de privacidad como PDF</string>
+    <string name="btn_clear_history">Borrar historial</string>
+    <string name="history_title">Historial (Últimos 10)</string>
+    <string name="xmp_hint">Nota: AndroidX ExifInterface limpia EXIF estándar y metadatos principales XMP/IPTC.</string>
 </resources>

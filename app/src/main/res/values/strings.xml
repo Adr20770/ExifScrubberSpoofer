@@ -50,7 +50,7 @@
     <string name="btn_accept">Accept &amp; Continue</string>
     <string name="btn_read_privacy_policy">Privacy Policy</string>
     <string name="privacy_policy_message"><b>1. Local Data Processing (Photos &amp; EXIF)</b><br/>All photos and metadata (GPS, camera info, timestamps) are processed <b>exclusively locally on your device</b>. No images or EXIF data are uploaded or transmitted to external servers.<br/><br/><b>2. Advertising &amp; Google AdMob</b><br/>Should advertising be integrated in future versions, I as the developer do <b>not</b> own or control any advertising data. The collection, management, and delivery of ads are handled exclusively by <b>Google (Google AdMob)</b>. For more details on Google\'s data processing, please visit Google\'s Privacy Policy at https://policies.google.com/technologies/ads.<br/><br/><b>3. Your Rights</b><br/>You have the right to access, rectify, or erase your data at any time.<br/><br/><b>4. Contact</b><br/>For privacy inquiries, please refer to the Legal Notice section.</string>
-    <string name="imprint_message"><b>Exif Scrubber &amp; Spoofer</b><br/><br/><b>Developer &amp; Contact:</b><br/>ADR20770 Apps (Single Developer)<br/>Email: support@adr20770.com<br/><br/><b>Disclaimer:</b><br/>This application processes media exclusively on the user\'s local device. No liability is assumed for data loss or improper use.<br/><br/>© 2025 ADR20770. All rights reserved.</string>
+    <string name="imprint_message"><b>Exif Scrubber &amp; Spoofer</b><br/><br/><b>Developer &amp; Contact:</b><br/>ADR20770 Apps (Single Developer)<br/>Contact: Contacting via my own email address is unfortunately not working yet. It was previously integrated in the app, but I was too hasty. I will work on opening the contact channel so you can send me bugs or questions directly.<br/><br/><b>Disclaimer:</b><br/>This application processes media exclusively on the user\'s local device. No liability is assumed for data loss or improper use.<br/><br/>© 2025 ADR20770. All rights reserved.</string>
     <string name="gdpr_dialog_message">I value your privacy!<br/><br/>• <b>100% Local Processing:</b> Your photos and metadata never leave your device.<br/>• <b>Ad-Free &amp; No Tracking:</b> Currently, no ads are displayed in this app, and no data is sent to advertising networks.<br/><br/>Please accept the privacy terms to use the app.</string>
     <string name="menu_theme">App Theme</string>
     <string name="theme_dialog_title">Choose Theme</string>
@@ -80,4 +80,26 @@
     <string name="hint_spoof_date">Fake Date (e.g. 2025:01:01 12:00:00)</string>
     <string name="check_delete_original">Secure delete original photo after cleaning</string>
     <string name="auto_scrub_toast">Shared image automatically scrubbed!</string>
+    <string name="toast_invalid_date">Invalid date format! Please use YYYY:MM:DD HH:MM:SS or YYYY-MM-DD</string>
+    <string name="report_title">EXIF Privacy Audit Report</string>
+    <string name="toast_delete_cancelled">Original photo deletion cancelled</string>
+    <string name="toast_delete_success">Original photo deleted!</string>
+    <string name="tab_single">Single</string>
+    <string name="tab_batch">Batch</string>
+    <string name="tab_tools">Tools</string>
+    <string name="batch_progress_format">Image %1$d of %2$d</string>
+    <string name="batch_result_format">%1$d of %2$d successfully cleaned</string>
+    <string name="pdf_save_success">PDF saved to Documents/ExifScrubber!</string>
+    <string name="pdf_save_error">Error converting image to PDF</string>
+    <string name="pdf_extract_success">%d pages extracted to Pictures/ExifScrubber!</string>
+    <string name="map_picker_title">Select Location on Map</string>
+    <string name="map_picker_confirm">Confirm Location</string>
+    <string name="btn_pick_location">Select on Map</string>
+    <string name="btn_random_offset">Random Offset</string>
+    <string name="btn_random_date">Random Date</string>
+    <string name="btn_shift_date">Shift N Days</string>
+    <string name="btn_export_pdf_report">Save Privacy Report as PDF</string>
+    <string name="btn_clear_history">Clear History</string>
+    <string name="history_title">Scrub History (Last 10)</string>
+    <string name="xmp_hint">Note: AndroidX ExifInterface cleans standard EXIF and core XMP/IPTC metadata.</string>
 </resources>

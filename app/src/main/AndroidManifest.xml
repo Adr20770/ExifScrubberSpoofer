@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://android.com">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Berechtigung für das Internet, damit Werbung nachgeladen werden kann -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
@@ -17,11 +17,6 @@
         android:theme="@style/Theme.ExifScrubberSpoofer"
         android:localeConfig="@xml/locales_config"
         tools:targetApi="34">
-
-        <!-- Die offizielle, universelle Test-App-ID von Google AdMob -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
 
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
@@ -40,6 +35,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".MapPickerActivity"
+            android:exported="false"
+            android:label="@string/map_picker_title" />
     </application>
 
 </manifest>
