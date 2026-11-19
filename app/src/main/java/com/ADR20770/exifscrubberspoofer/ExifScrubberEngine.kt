@@ -302,19 +302,22 @@ object ExifScrubberEngine {
     }
 
     fun getMediaStoreUriFromPickerUri(context: Context, pickerUri: Uri): Uri? {
-        if (pickerUri.authority == "media") {
+        if (pickerUri.authority == "media" && pickerUri.path?.startsWith("/external/images/media") == true) {
             return pickerUri
         }
+
+        // 1. Suche nach numerischer ID in den Pfad-Segmenten (von hinten nach vorne)
         try {
-            val lastSegment = pickerUri.lastPathSegment
-            if (lastSegment != null) {
-                val id = lastSegment.toLongOrNull()
-                if (id != null) {
+            val pathSegments = pickerUri.pathSegments
+            for (segment in pathSegments.reversed()) {
+                val id = segment.toLongOrNull()
+                if (id != null && id > 0) {
                     return ContentUris.withAppendedId(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, id)
                 }
             }
         } catch (_: Exception) {}
 
+        // 2. Abfrage der MediaStore _ID Spalte
         try {
             val projection = arrayOf(MediaStore.Images.Media._ID)
             context.contentResolver.query(pickerUri, projection, null, null, null)?.use { cursor ->

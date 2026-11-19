@@ -27,6 +27,9 @@ import androidx.core.text.HtmlCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 
@@ -146,34 +149,51 @@ class MainActivity : AppCompatActivity() {
     }
 
     internal fun deleteOriginalImage(uri: Uri) {
-        try {
-            if (DocumentsContract.isDocumentUri(this, uri)) {
-                try {
-                    if (DocumentsContract.deleteDocument(contentResolver, uri)) {
-                        Toast.makeText(this, getString(R.string.toast_delete_success), Toast.LENGTH_SHORT).show()
-                        return
+        lifecycleScope.launch(Dispatchers.Main) {
+            try {
+                if (DocumentsContract.isDocumentUri(this@MainActivity, uri)) {
+                    try {
+                        if (DocumentsContract.deleteDocument(contentResolver, uri)) {
+                            Toast.makeText(this@MainActivity, getString(R.string.toast_delete_success), Toast.LENGTH_SHORT).show()
+                            return@launch
+                        }
+                    } catch (e: Exception) {
+                        Log.w(TAG, "DocumentsContract.deleteDocument failed for $uri", e)
                     }
-                } catch (_: Exception) {}
-            }
-
-            val mediaUri = ExifScrubberEngine.getMediaStoreUriFromPickerUri(this, uri) ?: uri
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                val pendingIntent = MediaStore.createDeleteRequest(contentResolver, listOf(mediaUri))
-                deleteRequestLauncher.launch(IntentSenderRequest.Builder(pendingIntent.intentSender).build())
-            } else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.Q) {
-                try {
-                    contentResolver.delete(mediaUri, null, null)
-                    Toast.makeText(this, getString(R.string.toast_delete_success), Toast.LENGTH_SHORT).show()
-                } catch (e: android.app.RecoverableSecurityException) {
-                    deleteRequestLauncher.launch(IntentSenderRequest.Builder(e.userAction.actionIntent.intentSender).build())
                 }
-            } else {
-                contentResolver.delete(mediaUri, null, null)
-                Toast.makeText(this, getString(R.string.toast_delete_success), Toast.LENGTH_SHORT).show()
+
+                val mediaUri = ExifScrubberEngine.getMediaStoreUriFromPickerUri(this@MainActivity, uri) ?: uri
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    try {
+                        val pendingIntent = MediaStore.createDeleteRequest(contentResolver, listOf(mediaUri))
+                        deleteRequestLauncher.launch(IntentSenderRequest.Builder(pendingIntent.intentSender).build())
+                    } catch (e: Exception) {
+                        Log.e(TAG, "createDeleteRequest failed for $mediaUri, trying direct delete", e)
+                        try {
+                            contentResolver.delete(mediaUri, null, null)
+                            Toast.makeText(this@MainActivity, getString(R.string.toast_delete_success), Toast.LENGTH_SHORT).show()
+                        } catch (secEx: Exception) {
+                            Log.e(TAG, "Direct delete failed for $mediaUri", secEx)
+                            Toast.makeText(this@MainActivity, "Originalfoto konnte nicht gelöscht werden (Photo Picker Schutz).", Toast.LENGTH_LONG).show()
+                        }
+                    }
+                } else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.Q) {
+                    try {
+                        contentResolver.delete(mediaUri, null, null)
+                        Toast.makeText(this@MainActivity, getString(R.string.toast_delete_success), Toast.LENGTH_SHORT).show()
+                    } catch (e: android.app.RecoverableSecurityException) {
+                        deleteRequestLauncher.launch(IntentSenderRequest.Builder(e.userAction.actionIntent.intentSender).build())
+                    } catch (e: Exception) {
+                        Log.e(TAG, "Android 10 delete failed", e)
+                    }
+                } else {
+                    contentResolver.delete(mediaUri, null, null)
+                    Toast.makeText(this@MainActivity, getString(R.string.toast_delete_success), Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to delete original image $uri", e)
             }
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to delete original image $uri", e)
         }
     }
 
